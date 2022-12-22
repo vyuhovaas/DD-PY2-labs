@@ -1,29 +1,35 @@
 import doctest
 
 
-class Coffemaker:
+class CoffeMaker:
     """Класс описывает некоторые характеристики и содержимое кофеварки"""
-    def __init__(self, number_of_filters_:int, capacity_volume: float, temp: int):# TODO Написать 3 класса с документацией и аннотацией типов
+    def __init__(self, number_of_filters: int, capacity_volume: float, temperature: int):# TODO Написать 3 класса с документацией и аннотацией типов
         """Инициализация экземпляра класса
-        :param number_of_filters_: количество фильтров в кофеварке
+        :param number_of_filters: количество фильтров в кофеварке
         :param capacity_volume: объем кофеварки
-        :param temp: температура нагревания кофеварки
+        :param temperature: температура нагревания кофеварки
         """
-        self.filter = number_of_filters_
+        self.number_of_filter = number_of_filters
         self.capacity_volume = capacity_volume
-        self.temp = temp
+        self.temperature = temperature
         ...
 
-    def check_filter(self):
-        """ Проверка наличия фильтра в кофварке"""
+    def check_filter(self, number_of_filters: int):
+        """ Проверка наличия фильтра в кофварке
+        :param number_of_filters: количество фильтров в кофеварке
+        """
         ...
 
-    def get_temp(self):
-        """ Метод помогает получить температуру"""
+    def get_temperature(self, temperature: int):
+        """ Метод помогает получить нужную для варки кофе температуру
+         :param temperature: температура нагревания кофеварки
+         """
         ...
 
-    def is_empty_maker(self):
-        """ Метод проверяет пустая ли кофеварка"""
+    def is_empty(self, ):
+        """ Метод проверяет пустая ли кофеварка
+        :param capacity_volume: объем кофеварки
+        """
         ...
 
 
@@ -38,7 +44,7 @@ class Phone:
         self.max_charge = max_charge
         ...
 
-    def turn_on_the_phone(self, charge: int) -> None:
+    def is_able_to_turn_on(self, charge: int) -> None:
         """
         Метод проверяет возможность включения телефона
 
@@ -50,9 +56,10 @@ class Phone:
             raise ValueError("Заряд телефона должен быть положительным числом, иначе телефон невозможно включить")
         ...
 
-    def look_color_phone(self):
+    def look_color_phone(self, color: str):
         """
-        Метод указывает на то что можно узнать цвет телефона
+        Метод указывает на цвет телефона
+        :param color: цвет устройства
         :return: Цвет телефона
         """
         ...
@@ -74,10 +81,10 @@ class Coursework:
         """Чтение работы"""
         ...
 
-    def change_the_work(self, text: str) -> None:
+    def adjust_work(self, adjustments: str) -> None:
         """
         Изменение текста работы
-        :param text: текст курсовой работы
+        :param adjustments: текст курсовой работы
         :raise ValueError: Если данная работа не содержит текста, то выводим ошибку
         """
         if not isinstance(text, str):
