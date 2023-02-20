@@ -22,13 +22,11 @@ class Book:
 class PaperBook(Book):
     def __init__(self, name: str, author: str, pages: int):
         super().__init__(name, author)
-        if isinstance(pages, int):
-            if pages > 0:
-                self.pages = pages
-            else:
-                raise ValueError(f'Invalid number of pages: {pages!r}')
-        else:
-            raise ValueError(f'Number of pages ')
+        if not isinstance(pages, int):
+            raise TypeError("Количество страниц должно быть типа int")
+        if pages <= 0: 
+            raise ValueError("Количество страниц должно быть положительным числом")
+        self._pages = pages
 
     def __repr__(self):
         return f"{self.__class__.__name__}(name={self._name!r}, author={self._author!r}, pages={self.pages!r})"
